@@ -15,11 +15,12 @@ const images = [
 
 const elements = images.map((image) => {
   const elref = `<li><img src=${image.url}, alt = ${image.alt}></img></li>`;
+
   return elref;
 });
 
 const galRef = document.querySelector(".gallery");
 
-galRef.insertAdjacentHTML("afterbegin", ...elements);
+galRef.insertAdjacentHTML("afterbegin", elements.join(""));
 
 console.log(galRef);
