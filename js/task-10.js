@@ -29,8 +29,9 @@ function createBoxes(amount) {
     newDiv.style.height = `${height}px`;
     newDiv.style.backgroundColor = getRandomHexColor();
     newDiv.classList.add("new-div");
-    console.log(newDiv);
+    boxRef.append(newDiv);
   } while (i < amount);
+  console.log(boxRef);
 }
 
 function destroyAll(event) {
