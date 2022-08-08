@@ -7,18 +7,19 @@ const btnDestRef = document.querySelector("button[data-destroy]");
 const inputRef = document.querySelector("#controls > input");
 const boxRef = document.querySelector("#boxes");
 
-let amount = 0;
+let inputAmount = 0;
 
 function createAmount(event) {
-  amount = Number(event.currentTarget.value);
-  return amount;
+  inputAmount = Number(event.currentTarget.value);
+  return inputAmount;
 }
 
-function launchEvent(event) {
+function createBoxes(amount) {
+  amount = inputAmount;
+
   let i = 0;
   let width = 10;
   let height = 10;
-
   do {
     i += 1;
     width += 10;
@@ -27,11 +28,21 @@ function launchEvent(event) {
     newDiv.style.width = `${width}px`;
     newDiv.style.height = `${height}px`;
     newDiv.style.backgroundColor = getRandomHexColor();
-    boxRef.append(newDiv);
-    console.log(boxRef);
+    newDiv.classList.add("new-div");
+    console.log(newDiv);
   } while (i < amount);
+}
+
+function destroyAll(event) {
+  const byeEl = document.querySelector(".new-div");
+
+  do {
+    byeEl.remove();
+  } while (byeEl != 0);
 }
 
 inputRef.addEventListener("input", createAmount);
 
-btnCreateRef.addEventListener("click", launchEvent);
+btnCreateRef.addEventListener("click", createBoxes);
+
+btnDestRef.addEventListener("click", destroyAll);
