@@ -35,11 +35,8 @@ function createBoxes(amount) {
 }
 
 function destroyAll(event) {
-  const byeEl = document.querySelector(".new-div");
-
-  do {
-    byeEl.remove();
-  } while (byeEl != 0);
+  const byeEl = document.querySelectorAll(".new-div");
+  byeEl.forEach((element) => element.remove());
 }
 
 inputRef.addEventListener("input", createAmount);
