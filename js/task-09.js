@@ -11,7 +11,7 @@ const bodyRef = document.querySelector("body");
 function onColorChange(event) {
   bodyRef.style.backgroundColor = getRandomHexColor();
 
-  colRef.textContent = getRandomHexColor();
+  colRef.textContent = bodyRef.style.backgroundColor;
 
   console.log(colRef);
 }

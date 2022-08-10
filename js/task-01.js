@@ -5,15 +5,13 @@ const numOfCateg = categItemRef.length;
 console.log("Number of categories: ", numOfCateg);
 
 categItemRef.forEach((element) => {
-  const elemRef = element;
-
-  const elemRefTitle = elemRef.firstElementChild;
+  const elemRefTitle = element.firstElementChild;
 
   const textTitle = elemRefTitle.textContent;
 
   console.log("Category: ", textTitle);
 
-  const elemQuantity = elemRef.querySelectorAll("li").length;
+  const elemQuantity = element.querySelectorAll("li").length;
 
   console.log("Elements: ", elemQuantity);
 });

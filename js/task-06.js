@@ -3,6 +3,7 @@ const ref = {
 };
 
 function onInputBlur(event) {
+  ref.input.classList.remove("invalid");
   const validRef = event.currentTarget.value.length;
   const checkRef = ref.input.getAttribute("data-length");
   validRef === Number(checkRef)

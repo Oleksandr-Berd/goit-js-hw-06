@@ -14,9 +14,7 @@ const images = [
 ];
 
 const elements = images.map((image) => {
-  const elref = `<li><img src=${image.url}, alt = ${image.alt}></img></li>`;
-
-  return elref;
+  return `<li><img src=${image.url}, alt = ${image.alt}></img></li>`;
 });
 
 const galRef = document.querySelector(".gallery");
